@@ -18,7 +18,13 @@ link_directories(
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES source/main.cpp)
+set(SOURCE_FILES
+    source/main.cpp
+    source/helper/color.hpp
+    source/helper/color.cpp
+    source/reducer/color_reducer.hpp
+    source/reducer/color_reducer.cpp
+)
 
-add_executable(image_to_sketch ${SOURCE_FILES})
+add_executable(image_to_sketch ${SOURCE_FILES} )
 target_link_libraries(image_to_sketch opencv_core300 opencv_imgproc300 opencv_imgcodecs300 tbb)
